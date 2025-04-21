@@ -1,4 +1,4 @@
-CREATE TABLE date_dim (
+CREATE TABLE IF NOT EXISTS date_dim (
     date_id INT PRIMARY KEY,
     full_timestamp TIMESTAMP,
     local_timestamp TIMESTAMP,

@@ -1,0 +1,39 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: postgres_f1
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: formula1
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./SQL/combined:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          memory: 2g
+
+  spark:
+    image: bitnami/spark:latest
+    container_name: spark_f1
+    environment:
+    - SPARK_MODE=master
+    ports:
+    - "8080:8080"
+    -   # Spark Web UI
+    volumes:
+    - ../transfrom_and_load:/opt/spark_jobs
+    - ../datalake:/data
+    deploy:
+      resources:
+        limits:
+          memory: 3g
+
+
+volumes:
+  pgdata:

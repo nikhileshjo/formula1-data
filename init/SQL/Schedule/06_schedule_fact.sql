@@ -1,4 +1,4 @@
-CREATE TABLE schedule_fact (
+CREATE TABLE IF NOT EXISTS schedule_fact (
     schedule_id INT PRIMARY KEY,
     round_number INT,
     location_id INT,
