@@ -1,5 +1,3 @@
-# Documentation
-
 ![formula-1-car](img/formula-1-car.png)
 
 # Project Formula 1
