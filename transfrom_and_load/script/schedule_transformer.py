@@ -1,3 +1,6 @@
+# usage
+# spark-submit schedule_transformer.py DD-MM-YYYY /path/to/config/file.config
+
 #import modules
 from pyspark.sql import SparkSession
 import argparse
@@ -8,7 +11,7 @@ spark = SparkSession.builder.appName("schedule_transformer").getOrCreate()
 #parse arguments
 parser = argparse.ArgumentParser(description="Transform and load raw data for schedule of the next year")
 parser.add_argument("date", help="date in DD-MM-YYYY format")
-parser.add_argument("configFile", help="Path ot configuration file")
+parser.add_argument("configFile", help="Path to configuration file")
 args = parser.parse_args()
 
 #assign arguments to varilables

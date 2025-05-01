@@ -1,3 +1,6 @@
+# usage
+# python schedule_api_dumps.py DD-MM-YYYY /path/to/target/directory/
+
 #import modules
 import fastf1
 import argparse
@@ -5,13 +8,13 @@ import os
 
 # Instantiate input arguments. This will allow us to give input through our scheduler
 parser = argparse.ArgumentParser(description="Ingest schedule data from API to data lake")
-parser.add_argument("year", help="Year of the schedule")
+parser.add_argument("date", help="date in DD-MM-YYYY format")
 parser.add_argument("tarLoc", help="Target location to dump the files on")
 
 args = parser.parse_args()
 
 # assigning arguments to easy to use variables
-year = int(args.year)
+year = int(args.date[-4:])+1 #extract year from argument
 tarLoc = args.tarLoc
 
 #fetching schedule
@@ -26,7 +29,7 @@ except Exception as e:
 if len(yearlySchedule) != 0:
     print(f"Ingesting raw schedule for year {year}")
     try:
-        file_path = os.path.join(tarLoc, f"seasonCalender_{args.year}.txt")
+        file_path = os.path.join(tarLoc, f"seasonCalender_{year}.txt")
         with open(file_path, "w", encoding="utf-8") as f:
             # Write header
             f.write("<#??#>".join(yearlySchedule.columns) + "\n")
