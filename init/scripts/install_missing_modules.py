@@ -10,7 +10,7 @@ def install_if_missing(module_name):
         subprocess.check_call([sys.executable, "-m", "pip", "install", module_name])
 
 def main():
-    with open("pythonDependencies.txt", "r") as file:
+    with open("/housekeeping/pythonDependencies.txt", "r") as file:
         modules = [line.strip() for line in file if line.strip()]
     
     for module in modules:

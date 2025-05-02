@@ -19,6 +19,7 @@ docker-compose -f init/docker-compose.yml up -d
 Give it a couple of minutes, and it should start running.
 
 Open your web browser and log on to: localhost:portnumber [Available after phase-1 completion]
+Developer documentation can be found [here](dev.md)
 
 # Project Structure
 
