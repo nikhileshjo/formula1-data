@@ -5,6 +5,5 @@ CREATE TABLE IF NOT EXISTS date_dim (
     day_of_week VARCHAR(20),
     month_name VARCHAR(20),
     year INT,
-    quarter INT CHECK (quarter >= 1 AND quarter <= 4),
-    is_night_race BOOLEAN
+    quarter INT CHECK (quarter >= 1 AND quarter <= 4)
 );

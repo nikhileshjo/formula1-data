@@ -54,11 +54,11 @@ This is where our entire system connects with an external source to fetch the da
 
 Our source is https://docs.fastf1.dev/index.html you can dive deeper into it to understand how to use it better by following the link.
 
-All the ingestion scripts are placed under `/datalake` folder in the repository. You will understand the kind of data that they ingest by the names of the scripts.
+All the ingestion scripts are placed under `/ingestion_scripts` folder in the repository. You will understand the kind of data that they ingest by the names of the scripts.
 
 ## Schedule data ingestion
 
-This is done by a Python file `/datalake/schedule_api_dumps.py` 
+This is done by a Python file `/ingestion_scripts/schedule_api_dumps.py` 
 
 Usage of the script:
 
@@ -71,7 +71,7 @@ As we’re using a Docker container to run the scripts, we’ll invoke it throug
 **Arguments:**
 
 - The date is always supposed to be in DD-MM-YYYY format. The script then produces a file for the next year, so in the command shown above, it’s the 2020 schedule being extracted. I plan on making a schedule job around it on 1st Sept of every year because usually by that time, we have the next year’s official schedule
-- The location of the scripts isn’t seen in the repository because these are Docker volumes, it’s the same script`/app/schedule_api_dumps.py` = `/datalake/schedule_api_dumps.py`
+- The location of the scripts isn’t seen in the repository because these are Docker volumes, it’s the same script`/app/schedule_api_dumps.py` = `/ingestion_scripts/schedule_api_dumps.py`
 - Similarly, `/data/scheduling_raw/` = `/datalake/scheduling_raw` is the target location.
 
 **Working:**
