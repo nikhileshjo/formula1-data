@@ -1,9 +1,8 @@
 CREATE TABLE IF NOT EXISTS schedule_fact (
     schedule_id INT PRIMARY KEY,
-    round_number INT,
-    location_id INT,
-    event_id INT,
-    session_id INT,
+    location_id CHAR(32),
+    event_id CHAR(32),
+    session_id CHAR(32),
     date_id INT,
     
     FOREIGN KEY (location_id) REFERENCES location_dim(location_id),

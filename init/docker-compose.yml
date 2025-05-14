@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: formula1
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data # Uncomment this line to persist data
       - ./SQL/combined:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"

@@ -41,6 +41,7 @@ try:
 except Exception as e:
             print(f"ERROR: Failed to read the config file {configFile}")
             print(f"Error: {e}")
+            exit(1)
 #adding date to pattern
 #config_vals[source_file_pattern]=config_vals[source_file_pattern].replace("{year}",str(year))
 
@@ -78,6 +79,7 @@ with open(config_vals["property_file"], 'r') as file:
         except Exception as e:
             print(f"ERROR: Failed to load data for table {target_table} for the year {year}")
             print(f"Error: {e}")
+            exit(1)
 
 print("INFO: Transformation and loading successfully completed.")
 # Stop the Spark session
