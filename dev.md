@@ -113,6 +113,10 @@ Arguments:
 6. property file contains SQL in this format: *target_table_name* |*SQL_query* 
 7. The spark job consumes the raw file to create a raw table from which the SQL query will be used to transform the data as per the requirement of the data warehouse and then ingested into the data warehouse.
 
+### Schedule data ER diagram
+
+![schedule ER Diagram](img/schedule-ER.jpg)
+
 # Debugging
 
 - How to get into a Docker container:
