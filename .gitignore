@@ -1,2 +1,4 @@
 /EDA
 datalake/scheduling_raw/
+ingested_data/*
+my_env
